@@ -180,7 +180,8 @@ export const CONSTANTS = {
     TIMELINE: 'timeline',
     TIMELINE2: 'timeline2',
     FISHBONE: 'fishbone',
-    VERTICAL_TIMELINE: 'verticalTimeline'
+    VERTICAL_TIMELINE: 'verticalTimeline',
+    TREE_TABLE: 'treeTable',
   },
   DIR: {
     UP: 'up',
@@ -278,18 +279,14 @@ export const layoutList = [
   {
     name: '鱼骨图',
     value: CONSTANTS.LAYOUT.FISHBONE
+  },
+  {
+    name: 'Tree Table',
+    value: CONSTANTS.LAYOUT.TREE_TABLE
   }
 ]
-export const layoutValueList = [
-  CONSTANTS.LAYOUT.LOGICAL_STRUCTURE,
-  CONSTANTS.LAYOUT.MIND_MAP,
-  CONSTANTS.LAYOUT.CATALOG_ORGANIZATION,
-  CONSTANTS.LAYOUT.ORGANIZATION_STRUCTURE,
-  CONSTANTS.LAYOUT.TIMELINE,
-  CONSTANTS.LAYOUT.TIMELINE2,
-  CONSTANTS.LAYOUT.VERTICAL_TIMELINE,
-  CONSTANTS.LAYOUT.FISHBONE
-]
+
+export const layoutValueList = layoutList.map(i => i.value);
 
 // 节点数据中非样式的字段
 export const nodeDataNoStylePropList = [

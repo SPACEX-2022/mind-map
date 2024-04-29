@@ -36,6 +36,7 @@ import { shapeList } from './node/Shape'
 import { lineStyleProps } from '../../themes/default'
 import { CONSTANTS, ERROR_TYPES } from '../../constants/constant'
 import { Polygon } from '@svgdotjs/svg.js'
+import TreeTableTopHeader from "../../layouts/TreeTableTopHeader";
 
 // 布局列表
 const layouts = {
@@ -54,7 +55,9 @@ const layouts = {
   // 竖向时间轴
   [CONSTANTS.LAYOUT.VERTICAL_TIMELINE]: VerticalTimeline,
   // 鱼骨图
-  [CONSTANTS.LAYOUT.FISHBONE]: Fishbone
+  [CONSTANTS.LAYOUT.FISHBONE]: Fishbone,
+  // tree table
+  [CONSTANTS.LAYOUT.TREE_TABLE]: TreeTableTopHeader,
 }
 
 //  渲染
