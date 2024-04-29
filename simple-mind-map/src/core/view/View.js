@@ -170,8 +170,8 @@ class View {
   //  平移x,y方向
   translateXY(x, y) {
     if (x === 0 && y === 0) return
-    this.x += x
-    this.y += y
+      this.x += x
+      this.y += y
     this.transform()
     this.emitEvent('translate')
   }
@@ -329,6 +329,8 @@ class View {
       newX = -newRect.x + fitPadding + (elWidth - newRect.width) / 2
       newY = -newRect.y + fitPadding
     }
+    newX /= (this.opt.scale || 1)
+    newY /= (this.opt.scale || 1)
     this.translateXY(newX, newY)
   }
 

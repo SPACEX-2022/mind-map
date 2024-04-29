@@ -26,22 +26,22 @@ class Style {
       })
     }
     // 设置新样式
-    let {
-      backgroundColor,
-      backgroundImage,
-      backgroundRepeat,
-      backgroundPosition,
-      backgroundSize
-    } = themeConfig
-    el.style.backgroundColor = backgroundColor
-    if (backgroundImage && backgroundImage !== 'none') {
-      el.style.backgroundImage = `url(${backgroundImage})`
-      el.style.backgroundRepeat = backgroundRepeat
-      el.style.backgroundPosition = backgroundPosition
-      el.style.backgroundSize = backgroundSize
-    } else {
-      el.style.backgroundImage = 'none'
-    }
+    // let {
+    //   backgroundColor,
+    //   backgroundImage,
+    //   backgroundRepeat,
+    //   backgroundPosition,
+    //   backgroundSize
+    // } = themeConfig
+    // el.style.backgroundColor = backgroundColor
+    // if (backgroundImage && backgroundImage !== 'none') {
+    //   el.style.backgroundImage = `url(${backgroundImage})`
+    //   el.style.backgroundRepeat = backgroundRepeat
+    //   el.style.backgroundPosition = backgroundPosition
+    //   el.style.backgroundSize = backgroundSize
+    // } else {
+    //   el.style.backgroundImage = 'none'
+    // }
   }
 
   // 移除背景样式
