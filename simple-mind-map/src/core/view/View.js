@@ -329,8 +329,8 @@ class View {
       newX = -newRect.x + fitPadding + (elWidth - newRect.width) / 2
       newY = -newRect.y + fitPadding
     }
-    newX /= (this.opt.scale || 1)
-    newY /= (this.opt.scale || 1)
+    newX /= (this.mindMap.opt.scale || 1)
+    newY /= (this.mindMap.opt.scale || 1)
     this.translateXY(newX, newY)
   }
 

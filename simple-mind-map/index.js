@@ -207,6 +207,7 @@ class MindMap {
   resize() {
     this.getElRectInfo()
     this.svg.size(this.width, this.height)
+    this.opt.fit && this.view.fit(undefined, true)
     this.emit('resize')
   }
 
@@ -246,7 +247,9 @@ class MindMap {
     this.execCommand('CLEAR_ACTIVE_NODE')
     this.opt.theme = theme
     if (!notRender) {
-      this.render(null, CONSTANTS.CHANGE_THEME)
+      this.render(() => {
+        this.opt.fit && this.view.fit(undefined, true)
+      }, CONSTANTS.CHANGE_THEME)
     }
     this.emit('view_theme_change', theme)
   }
@@ -303,7 +306,9 @@ class MindMap {
     this.view.reset()
     this.renderer.setLayout()
     if (!notRender) {
-      this.render(null, CONSTANTS.CHANGE_LAYOUT)
+      this.render(() => {
+        this.opt.fit && this.view.fit(undefined, true)
+      }, CONSTANTS.CHANGE_LAYOUT)
     }
     this.emit('layout_change', layout)
   }

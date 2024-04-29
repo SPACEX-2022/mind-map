@@ -24,6 +24,8 @@ export const defaultOpt = {
   imgTextMargin: 5,
   // 节点里各种文字信息的间距，如图标和文字的间距
   textContentMargin: 2,
+  // 缩放比例
+  scale: 1,
   // 多选节点时鼠标移动到边缘时的画布移动偏移量
   selectTranslateStep: 3,
   // 多选节点时鼠标移动距边缘多少距离时开始偏移
