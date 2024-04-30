@@ -97,7 +97,7 @@ class MindMap {
     })
 
     // 初始渲染
-    this.render(this.opt.fit ? () => this.view.fit() : () => {})
+    this.render(this.opt.fit ? () => this.view.fit(undefined, true) : () => {})
     setTimeout(() => {
       if (this.opt.data) this.command.addHistory()
     }, 0)
@@ -197,8 +197,8 @@ class MindMap {
   // 获取或更新容器尺寸位置信息
   getElRectInfo() {
     this.elRect = this.el.getBoundingClientRect()
-    this.width = this.elRect.width
-    this.height = this.elRect.height
+    this.width = this.el.offsetWidth
+    this.height = this.el.offsetHeight
     if (this.width <= 0 || this.height <= 0)
       throw new Error('容器元素el的宽高不能为0')
   }
@@ -207,6 +207,7 @@ class MindMap {
   resize() {
     this.getElRectInfo()
     this.svg.size(this.width, this.height)
+    this.opt.fit && this.view.fit(undefined, true)
     this.emit('resize')
   }
 
@@ -246,7 +247,9 @@ class MindMap {
     this.execCommand('CLEAR_ACTIVE_NODE')
     this.opt.theme = theme
     if (!notRender) {
-      this.render(null, CONSTANTS.CHANGE_THEME)
+      this.render(() => {
+        this.opt.fit && this.view.fit(undefined, true)
+      }, CONSTANTS.CHANGE_THEME)
     }
     this.emit('view_theme_change', theme)
   }
@@ -303,7 +306,9 @@ class MindMap {
     this.view.reset()
     this.renderer.setLayout()
     if (!notRender) {
-      this.render(null, CONSTANTS.CHANGE_LAYOUT)
+      this.render(() => {
+        this.opt.fit && this.view.fit(undefined, true)
+      }, CONSTANTS.CHANGE_LAYOUT)
     }
     this.emit('layout_change', layout)
   }
